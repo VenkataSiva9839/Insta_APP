@@ -18,7 +18,6 @@ public class AuthController {
 	private AuthService service;
 	
 	
-	
 	public AuthController(AuthService service) {
 		this.service = service;
 	}
@@ -35,7 +34,8 @@ public class AuthController {
 	{
 		return service.login(user);
 	
-	}
+	} 
+
 	
 
 }

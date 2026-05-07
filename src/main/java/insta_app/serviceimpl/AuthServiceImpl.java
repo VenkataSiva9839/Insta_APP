@@ -27,9 +27,10 @@ public class AuthServiceImpl implements AuthService{
 	private ResponseStructure<UserRes> structure;
 	private ResponseStructure<UseRes> structureRes;
 
+	
+
 	public AuthServiceImpl(AuthRepo authrepo, ResponseStructure<UserRes> structure,
-			ResponseStructure<UseRes> structureRes) {
-		super();
+			ResponseStructure<UseRes> structureRes, ResponseStructure<User> structureOut) {
 		this.authrepo = authrepo;
 		this.structure = structure;
 		this.structureRes = structureRes;
@@ -120,5 +121,6 @@ public class AuthServiceImpl implements AuthService{
 		return useRes;
 	}
 
+	
 }
 

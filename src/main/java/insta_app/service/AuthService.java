@@ -14,4 +14,5 @@ public interface AuthService {
 
 	ResponseEntity<ResponseStructure<UseRes>> login(UseReq user);
 
+
 }
