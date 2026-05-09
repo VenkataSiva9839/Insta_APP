@@ -24,6 +24,15 @@ public class User {
 
 	private Role role;
 
+	private boolean isVerify;
+			
+	public boolean isVerify() {
+		return isVerify;
+	}
+
+	public void setVerify(boolean isVerify) {
+		this.isVerify = isVerify;
+	}
 
 	public boolean isLogin() {
 		return login;
