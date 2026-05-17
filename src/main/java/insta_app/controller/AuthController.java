@@ -1,7 +1,6 @@
 package insta_app.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +15,6 @@ import insta_app.utility.ResponseStructure;
 
 
 @RestController
-@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class AuthController {
 
 	private AuthService service;
@@ -45,9 +43,16 @@ public class AuthController {
 	@PostMapping("/login")
 	public ResponseEntity<ResponseStructure<UseRes>> login(@RequestBody UseReq user)
 	{
-		return service.login(user);
+		return null;
 	
 	} 
+	
+	@PostMapping("/home")
+	public ResponseEntity<ResponseStructure<UseRes>> home(@RequestBody UseReq user)
+	{
+		return null;
+	
+	}
 
 //	New Change
 

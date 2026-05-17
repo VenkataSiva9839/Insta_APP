@@ -2,7 +2,6 @@ package insta_app.serviceimpl;
 
 import java.security.SecureRandom;
 import java.util.Optional;
-import java.util.Random;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,9 +40,6 @@ public class AuthServiceImpl implements AuthService{
 	private CacheStore<User> userCache;
 	
 	private MailService mailService;
-
-
-	
 
 
 
@@ -202,9 +198,8 @@ public class AuthServiceImpl implements AuthService{
 
 		user.setVerify(true);
 		
-		User save = authrepo.save(user);
 		
-		return ResponseEntity.ok(structure.setMessage("Details Saved Successfullt").setStatuscode(HttpStatus.OK.value()).setBody(changeUsertoUserReq(save, new UserRes())));
+		return ResponseEntity.ok(structure.setMessage("Details Saved Successfullt").setStatuscode(HttpStatus.OK.value()).setBody(changeUsertoUserReq(user, new UserRes())));
 	}
 
 	
