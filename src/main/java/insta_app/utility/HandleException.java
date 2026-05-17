@@ -5,6 +5,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import insta_app.exception.InvalidEmailSpefied;
+import insta_app.exception.OtpExpiredException;
+import insta_app.exception.RegistrationSessionExpired;
+import insta_app.exception.TokenExpiredException;
 import insta_app.exception.UserAlreadyExistByEmail;
 import insta_app.exception.UserAlreadyLogin;
 import insta_app.exception.UserNotExistByEmail;
@@ -56,5 +60,33 @@ public class HandleException {
 		return ResponseEntity.badRequest().body(errorStructure.setMessage(ex.getMessage()).setStatuscode(HttpStatus.BAD_REQUEST.value()));
 	}
 	
+	@ExceptionHandler
+	public ResponseEntity<ErrorStructure> HandleInvalidEmailSpecified(InvalidEmailSpefied ex)
+	{
 
+		return ResponseEntity.badRequest().body(errorStructure.setMessage(ex.getMessage()).setStatuscode(HttpStatus.BAD_REQUEST.value()));
+	}
+
+	@ExceptionHandler
+	public ResponseEntity<ErrorStructure> HandleOtpExpiredException(OtpExpiredException ex)
+	{
+
+		return ResponseEntity.badRequest().body(errorStructure.setMessage(ex.getMessage()).setStatuscode(HttpStatus.BAD_REQUEST.value()));
+	}
+	
+
+	@ExceptionHandler
+	public ResponseEntity<ErrorStructure> HandleRegistrationExpiredException (RegistrationSessionExpired ex)
+	{
+
+		return ResponseEntity.badRequest().body(errorStructure.setMessage(ex.getMessage()).setStatuscode(HttpStatus.BAD_REQUEST.value()));
+	}
+	
+	@ExceptionHandler
+	public ResponseEntity<ErrorStructure> HandleTokenExpiredException (TokenExpiredException ex)
+	{
+
+		return ResponseEntity.badRequest().body(errorStructure.setMessage(ex.getMessage()).setStatuscode(HttpStatus.BAD_REQUEST.value()));
+	}
 }
+

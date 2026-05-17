@@ -10,5 +10,5 @@ public class InstaAppApplication {
 		SpringApplication.run(InstaAppApplication.class, args);
 	}
 	
-
 }
+

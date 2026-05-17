@@ -21,4 +21,9 @@ public interface AuthRepo extends JpaRepository<User, Integer>{
 	@Query("update User u set u.login = true where u.id=:id")
 	public void updateLogStatus(@Param("id") Integer id);
 
+	boolean existsByEmail(String email);
+
+	
+//	Optional<User> findByUsername(String username);
+
 }
